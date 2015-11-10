@@ -3,10 +3,10 @@ These scripts enabled unlocking of a crypted root device at boot time, using ssh
 
 These scripts have been tested under the following distributions:
 
-| Distribution | Version | Who? |
-| ------- | ----- | -------- | 
-| Debian | 8.2 | [fetzerms](https://github.com/fetzerms/) | 
-| Debian | 7.9 | [fetzerms](https://github.com/fetzerms/) | 
+| Distribution | Version | Who? | When?
+| ------- | ----- | -------- | ------- |
+| Debian | 8.2 | [fetzerms](https://github.com/fetzerms/) | 2015-11-10 |
+| Debian | 7.9 | [fetzerms](https://github.com/fetzerms/) | unknown |
 
 Feel free to add yourself (and your distribution) to this list!
 
