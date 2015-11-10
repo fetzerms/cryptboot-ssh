@@ -1,0 +1,4 @@
+#!/bin/sh
+sleep 5
+mac="$(ifconfig | grep HWaddr | awk '{ print $NF }')"
+ssh ConnectTimeout=100 KEYHOST_ADDRESS "$mac"

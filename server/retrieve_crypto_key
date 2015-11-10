@@ -1,0 +1,12 @@
+#!/bin/bash
+macAddr="$SSH_ORIGINAL_COMMAND"
+if [ ! -z "$macAddr" ]; then
+	hMacAddr=$( echo $macAddr | sha1sum | awk '{ print $1 }' )
+	checkHash="PLACEHOLDER_FOR_MAC_ADDRESS"
+
+	if [ "$hMacAddr" == "$checkHash" ]; then
+	        cat ~/crypt-keys/PLACEHOLDER_FOR_KEYFILE.keyfile
+	else
+		echo "nope!"
+	fi
+fi

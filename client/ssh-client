@@ -1,0 +1,24 @@
+#!/bin/sh
+PREREQ=""
+
+prereqs()
+{
+	echo "$PREREQ"
+}
+
+case $1 in
+prereqs)
+	prereqs
+	exit 0
+	;;
+esac
+
+if [ ! -x /usr/bin/ssh ]; then
+	exit 0
+fi
+
+. /usr/share/initramfs-tools/hook-functions
+
+copy_exec /usr/bin/ssh
+mkdir -p $DESTDIR/lib/cryptsetup/scripts/
+cp /lib/cryptsetup/scripts/get_key_ssh $DESTDIR/lib/cryptsetup/scripts/get_key_ssh
