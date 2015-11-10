@@ -107,6 +107,7 @@ You may copy the keys from the dropbear installation. This will allow you to con
 Edit /etc/initramfs-tools/initramfs.conf to include busybox and assign an ip during boot time. You may also use dhcp. Please refer to the documentation.
 ```bash
 BUSYBOX=y
+DROPBEAR=y
 DEVICE=eth0
 IP=192.168.1.201::192.168.1.1:255.255.255.0::eth0
 ```
