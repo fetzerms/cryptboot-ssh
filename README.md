@@ -75,7 +75,7 @@ user@keyvm:~$ wget https://raw.githubusercontent.com/fetzerms/cryptboot-ssh/mast
 user@keyvm:~$ chmod +x ./crypt-scripts/retrieve_"$clientName"_key
 
 # Adjust variables in key script.
-user@keyvm:~$ user@keyvm:~$ sed -i "s/PLACEHOLDER_FOR_MAC_ADDRESS/$( echo "$clientMac" | sha1sum | awk '{ print $1 }')/g" ./crypt-scripts/retrieve_"$clientName"_key
+user@keyvm:~$ sed -i "s/PLACEHOLDER_FOR_MAC_ADDRESS/$( echo "$clientMac" | sha1sum | awk '{ print $1 }')/g" ./crypt-scripts/retrieve_"$clientName"_key
 user@keyvm:~$ sed -i "s/PLACEHOLDER_FOR_KEYFILE/"$clientName"/g" ./crypt-scripts/retrieve_"$clientName"_key
 ```
 
