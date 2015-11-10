@@ -57,7 +57,7 @@ This tutorial uses shell variables to offer a more generic approach. In case you
 
 ### Key server setup
 
-These steps are executed on the **keyvm**. As mentioned above, variables are used. If you close your terminal and decide the resum the steps, make sure to set these variables *again*. If you decide to add a second client, make sure to use a different client name.
+These steps are executed on the **keyvm**. As mentioned above, variables are used. If you close your terminal and decide the resume the steps, make sure to set these variables *again*. If you decide to add a second client, make sure to use a different client name.
 
 ```bash
 user@keyvm:~$ clientName="cryptvm"
