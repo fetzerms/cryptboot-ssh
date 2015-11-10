@@ -41,7 +41,7 @@ This example assumes two freshly installed virtual debian 8.0.2 netinstall machi
 
 | Name | Ip | Mac | Role |
 | ------- | ----- | -------- | ------- |
-| cryptvm | 192.168.1.201 | 08:00:27:8b:ff:f9 | Client |
+| cryptvm | 192.168.1.201 | 08:00:27:8B:FF:F9 | Client |
 | keyvm | 192.168.1.245 | does not matter | Key Server |
 
 Please note this information for your own servers.
@@ -52,11 +52,11 @@ This tutorial uses shell variables to offer a more generic approach. In case you
 
 ### Key server setup
 
-These steps are executed on the **keyvm**. As mentioned above, variables are used. If you close your terminal and decide the resum the steps, make sure to set these variables *again*.
+These steps are executed on the **keyvm**. As mentioned above, variables are used. If you close your terminal and decide the resum the steps, make sure to set these variables *again*. Please make sure that 
 
 ```bash
 user@keyvm:~$ clientName="cryptvm"
-user@keyvm:~$ clientMac="08:00:27:8b:ff:f9"
+user@keyvm:~$ clientMac="08:00:27:8B:FF:F9"
 ```
 The following command prepares the required directories. This step is only required for the initial setup.
 
@@ -76,7 +76,7 @@ user@keyvm:~$ wget https://raw.githubusercontent.com/fetzerms/cryptboot-ssh/mast
 user@keyvm:~$ chmod +x ./crypt-scripts/retrieve_"$clientName"_key
 
 # Adjust variables in key script.
-user@keyvm:~$ sed -i "s/PLACEHOLDER_FOR_MAC_ADDRESS/$( echo "$clientMac" | sha1sum | awk '{ print $1 }')/g" ./crypt-scripts/retrieve_"$clientName"_key
+user@keyvm:~$ sed -i "s/PLACEHOLDER_FOR_MAC_ADDRESS/$( echo "${clientMac^^}" | sha1sum | awk '{ print $1 }')/g" ./crypt-scripts/retrieve_"$clientName"_key
 user@keyvm:~$ sed -i "s/PLACEHOLDER_FOR_KEYFILE/"$clientName"/g" ./crypt-scripts/retrieve_"$clientName"_key
 ```
 
