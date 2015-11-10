@@ -167,7 +167,7 @@ Proceed with adding the key to your crypto devices:
 # Add key to crypto device. Make sure to adjust the device.
 root@cryptvm:~$ cryptsetup luksAddKey /dev/sda5 ./tmp-mount/keyfile
 ```
-After adding the device, ajust /etc/crypttab to include the keyscript. It should look like this:
+After adding the device, adjust /etc/crypttab to include the keyscript. It should look like this:
 ```bash
 sda5_crypt UUID=<uuid> none luks,keyscript=/lib/cryptsetup/scripts/get_key_ssh
 ```
