@@ -27,6 +27,11 @@ Feel free to add yourself (and your distribution) to this list!
  * The "Key server" should only be turned on when needed.
  * A compromised Key server may reveal all crypt keys.
 
+## Todos:
+ * Wrapper scripts on client and server side to require the least user input.
+ * Some logging of the key retrievals.
+ * Some IRC logging of the retrievals using IRCCatX
+
 ## Usage 
 
 The following chapter describes the usage of the scripts. It is recommended that you read through all the steps and make sure to understand every single step before actually implementing it.
