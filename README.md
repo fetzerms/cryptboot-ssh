@@ -71,7 +71,7 @@ The following steps are client specific and need to be executed for each client.
 user@keyvm:~$ dd bs=512 count=4 if=/dev/urandom of=./crypt-keys/"$clientName".keyfile iflag=fullblock 
 
 # Download the server-keyscript and make it executable
-user@keyvm:~$ wget <<retrieve-key-file>> -O ./crypt-scripts/retrieve_"$clientName"_key
+user@keyvm:~$ wget https://raw.githubusercontent.com/fetzerms/cryptboot-ssh/master/server/retrieve_crypto_key -O ./crypt-scripts/retrieve_"$clientName"_key
 user@keyvm:~$ chmod +x ./crypt-scripts/retrieve_"$clientName"_key
 
 # Adjust variables in key script.
@@ -108,11 +108,11 @@ You may copy the keys from the dropbear installation. This will allow you to con
 root@cryptvm:~$ ssh-keygen -t rsa -f /etc/initramfs-tools/root/.ssh/unlock_rsa -N ''
 
 # Download initramfs hooks to ensure that the required files are available during boot.
-root@cryptvm:~$ wget <<hook-script>> -O /etc/initramfs-tools/hooks/ssh-client
-root@cryptvm:~$ wget <<key-script> -O /etc/initramfs-tools/hooks/unlock-keys
+root@cryptvm:~$ wget https://raw.githubusercontent.com/fetzerms/cryptboot-ssh/master/client/ssh-client -O /etc/initramfs-tools/hooks/ssh-client
+root@cryptvm:~$ wget https://github.com/fetzerms/cryptboot-ssh/blob/master/client/unlock-keys -O /etc/initramfs-tools/hooks/unlock-keys
 
 # Download cryptsetup keyscript and mark as executable
-root@cryptvm:~$ wget <<key-script> -O /lib/cryptsetup/scripts/get_key_ssh 
+root@cryptvm:~$ wget https://raw.githubusercontent.com/fetzerms/cryptboot-ssh/master/client/get_key_ssh -O /lib/cryptsetup/scripts/get_key_ssh 
 root@cryptvm:~$ chmod a+x /lib/cryptsetup/scripts/get_key_ssh 
 
 # Adjust ip address.
