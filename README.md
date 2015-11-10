@@ -62,6 +62,7 @@ The following command prepares the required directories. This step is only requi
 
 ```bash
 user@keyvm:~$ mkdir crypt-{keys,scripts}
+user@keyvm:~$ mkdir .ssh
 ```
 
 The following steps are client specific and need to be executed for each client.
