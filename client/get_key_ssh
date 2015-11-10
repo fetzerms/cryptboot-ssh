@@ -1,4 +1,4 @@
 #!/bin/sh
 sleep 5
 mac="$(ifconfig | grep HWaddr | awk '{ print $NF }')"
-ssh -o ConnectTimeout=100 KEYHOST_ADDRESS "$mac"
+ssh -i /root/.ssh/unlock_rsa -o ConnectTimeout=100 KEYHOST_ADDRESS "$mac"
