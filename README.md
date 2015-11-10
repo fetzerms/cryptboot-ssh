@@ -117,7 +117,11 @@ root@cryptvm:~$ ssh-keygen -t rsa -f /etc/initramfs-tools/root/.ssh/unlock_rsa -
 
 # Download initramfs hooks to ensure that the required files are available during boot.
 root@cryptvm:~$ wget https://raw.githubusercontent.com/fetzerms/cryptboot-ssh/master/client/ssh-client -O /etc/initramfs-tools/hooks/ssh-client
-root@cryptvm:~$ wget https://github.com/fetzerms/cryptboot-ssh/blob/master/client/unlock-keys -O /etc/initramfs-tools/hooks/unlock-keys
+root@cryptvm:~$ wget https://raw.githubusercontent.com/fetzerms/cryptboot-ssh/master/client//unlock-keys -O /etc/initramfs-tools/hooks/unlock-keys
+
+# Enable the hooks (make them executable)
+root@cryptvm:~$ chmod +x /etc/initramfs-tools/hooks/ssh-client
+root@cryptvm:~$ chmod +x /etc/initramfs-tools/hooks/unlock-keys
 
 # Download cryptsetup keyscript and mark as executable
 root@cryptvm:~$ wget https://raw.githubusercontent.com/fetzerms/cryptboot-ssh/master/client/get_key_ssh -O /lib/cryptsetup/scripts/get_key_ssh 
