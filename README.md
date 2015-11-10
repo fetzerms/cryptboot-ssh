@@ -41,7 +41,7 @@ This example assumes two freshly installed virtual debian 8.0.2 netinstall machi
 
 | Name | Ip | Mac | Role |
 | ------- | ----- | -------- | ------- |
-| cryptvm | 192.168.1.201 | 08:00:27:8B:FF:F9 | Client |
+| cryptvm | 192.168.1.201 | 08:00:27:8b:ff:f9 | Client |
 | keyvm | 192.168.1.245 | does not matter | Key Server |
 
 Please note this information for your own servers.
@@ -56,7 +56,7 @@ These steps are executed on the **keyvm**. As mentioned above, variables are use
 
 ```bash
 user@keyvm:~$ clientName="cryptvm"
-user@keyvm:~$ clientMac="08:00:27:8B:FF:F9"
+user@keyvm:~$ clientMac="08:00:27:8b:ff:f9"
 ```
 The following command prepares the required directories. This step is only required for the initial setup.
 
