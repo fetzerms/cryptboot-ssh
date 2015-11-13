@@ -5,8 +5,10 @@ These scripts have been tested under the following distributions:
 
 | Distribution | Version | Who? | When?
 | ------- | ----- | -------- | ------- |
+| Ubuntu Server | 14.04.3 | [fetzerms](https://github.com/fetzerms/) | 2015-11-13 |
 | Debian | 8.2 | [fetzerms](https://github.com/fetzerms/) | 2015-11-10 |
 | Debian | 7.9 | [fetzerms](https://github.com/fetzerms/) | unknown |
+
 
 Feel free to add yourself (and your distribution) to this list!
 
