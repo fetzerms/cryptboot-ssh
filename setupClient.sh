@@ -5,7 +5,7 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 if [ -z $keyHost ] ; then
-	echo "usage: setupClient.sh user@keyserver"
+	echo "Usage: $0 user@keyserver"
 	exit 0
 fi
 echo "Setting up Key-Server at $1"
