@@ -8,6 +8,8 @@ if [ -z $keyHost ] ; then
 	echo "Usage: $0 user@keyserver"
 	exit 0
 fi
+echo "Backing up current initrd"
+cp /initrd.img /boot/initrd.img.cryptbootbackup
 echo "Setting up Key-Server at $1"
 apt-get install busybox dropbear
 echo "Which ethernet interface is to be used on boot?"
