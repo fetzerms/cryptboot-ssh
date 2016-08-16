@@ -148,6 +148,9 @@ These steps are executed on the **keyvm**. Variables are used.
 ```bash
 # Add the generated pubkey (from cryptvm) to the keyvm. 
 # Make sure to adjust "<<copied_unlock.rsa>>". This includes the ssh-rsa and root@host portion.
+# The command option enforces the connecting client to only execute a specific command, which
+# will be the command to retrieve the crypt key. Other commands or interactive sessions are not 
+# possible with this key.
 user@keyvm:~$ echo "command=\"./crypt-scripts/retrieve_"$clientName"_key\" <<copied_unlock.rsa>>" >> ~/.ssh/authorized_keys
 ```
 
