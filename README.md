@@ -18,8 +18,9 @@ Feel free to add yourself (and your distribution) to this list!
  * "Client" - A (virtual) machine, retrieving the encryption keys at boot time.
 
 ## Repository contents
- *  ./client - Scripts and hooks to be deployed on the client.
- *  ./server - Scripts to be deployed on the key server
+ *  ./client  - Scripts and hooks to be deployed on the client.
+ *  ./server  - Scripts to be deployed on the key server
+ *  ./scripts - Scripts to automate the setup of clients and servers.
  *  README.md - This readme file.
  *  LICENSE - The GPLv2 license.
  
