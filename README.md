@@ -20,7 +20,7 @@ Feel free to add yourself (and your distribution) to this list!
 ## Repository contents
  *  ./client  - Scripts and hooks to be deployed on the client.
  *  ./server  - Scripts to be deployed on the key server
- *  ./scripts - Scripts to automate the setup of clients and servers.
+ *  ./scripts - Scripts to automate the setup of clients and servers. Needs some rework. Currently the manual setup is highly recommended.
  *  README.md - This readme file.
  *  LICENSE - The GPLv2 license.
  
