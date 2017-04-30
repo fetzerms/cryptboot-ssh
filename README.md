@@ -5,6 +5,7 @@ These scripts have been tested under the following distributions:
 
 | Distribution | Version | Who? | When?
 | ------- | ----- | -------- | ------- |
+| Ubuntu Server | 16.04.2 | [fetzerms](https://github.com/fetzerms/) | 2017-04-30 |
 | Ubuntu Server | 14.04.3 | [fetzerms](https://github.com/fetzerms/) | 2015-11-13 |
 | Debian | 8.2 | [fetzerms](https://github.com/fetzerms/) | 2015-11-10 |
 | Debian | 7.9 | [fetzerms](https://github.com/fetzerms/) | unknown |
@@ -123,6 +124,7 @@ IP=192.168.1.201::192.168.1.1:255.255.255.0::eth0
 
 ```bash
 # Generate ssh key to retrieve keyfile with
+root@cryptvm:~$ mkdir -p /etc/initramfs-tools/root/.ssh/
 root@cryptvm:~$ ssh-keygen -t rsa -f /etc/initramfs-tools/root/.ssh/unlock_rsa -N ''
 
 # Download initramfs hooks to ensure that the required files are available during boot.
