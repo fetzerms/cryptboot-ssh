@@ -1,5 +1,5 @@
 # cryptboot-ssh
-These scripts enabled unlocking of a crypted root device at boot time, using ssh. During the boot, the encrypted client establishes a ssh connection to the key server and retrieves the required keyfiles using SSH pubkey authentication. As another layer of security the clients MAC-Address is used to authorize the key retrieval.
+These scripts enable unlocking of a crypted root device at boot time, using ssh. During the boot, the encrypted client establishes a ssh connection to the key server and retrieves the required keyfiles using SSH pubkey authentication. As another layer of security the clients MAC-Address is used to authorize the key retrieval.
 
 These scripts have been tested under the following distributions:
 
