@@ -12,7 +12,7 @@ These scripts have been tested under the following distributions:
 | Raspbian | 7.11 | [459below](https://github.com/459below/) | 2016-08-17 |
 
 
-These scripts are currently not working with the following distributions:
+These scripts are currently **not** working with the following distributions:
 
 | Distribution | Version | Who? | When?
 | ------- | ----- | -------- | ------- |
