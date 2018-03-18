@@ -11,6 +11,10 @@ These scripts have been tested under the following distributions:
 | Debian | 7.9 | [fetzerms](https://github.com/fetzerms/) | unknown |
 | Raspbian | 7.11 | [459below](https://github.com/459below/) | 2016-08-17 |
 
+These scripts are currently not working with the following distributions:
+| Distribution | Version | Who? | When?
+| Debian | 9.4 | [sscheib](https://github.com/sscheib/) | 2018-03-18 |
+
 
 Feel free to add yourself (and your distribution) to this list!
 
