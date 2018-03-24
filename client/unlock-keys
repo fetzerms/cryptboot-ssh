@@ -19,6 +19,12 @@ fi
 
 . /usr/share/initramfs-tools/hook-functions
 
-cp /etc/initramfs-tools/root/.ssh/unlock_rsa "${DESTDIR}/root/.ssh/"
-cp /etc/initramfs-tools/root/.ssh/unlock_rsa.pub "${DESTDIR}/root/.ssh/"
-cp /etc/initramfs-tools/root/.ssh/known_hosts "${DESTDIR}/root/.ssh/"
+if [ ! -d ${DESTDIR}/root/ ]; then
+	ROOTDIR="$(cd "${DESTDIR}"; echo root-*)"
+else
+	ROOTDIR="root"
+fi
+
+cp /etc/initramfs-tools/root/.ssh/unlock_rsa "${DESTDIR}/${ROOTDIR}/.ssh/"
+cp /etc/initramfs-tools/root/.ssh/unlock_rsa.pub "${DESTDIR}/${ROOTDIR}/.ssh/"
+cp /etc/initramfs-tools/root/.ssh/known_hosts "${DESTDIR}/${ROOTDIR}/.ssh/"
