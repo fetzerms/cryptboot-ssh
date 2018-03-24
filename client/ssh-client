@@ -19,7 +19,13 @@ fi
 
 . /usr/share/initramfs-tools/hook-functions
 
+if [ ! -d ${DESTDIR}/root/ ]; then
+	ROOTDIR="$(cd "${DESTDIR}"; echo root-*)"
+else
+	ROOTDIR="root"
+fi
+
 copy_exec /usr/bin/ssh
-mkdir -p $DESTDIR/lib/cryptsetup/scripts/
-mkdir -p $DESTDIR/root/.ssh/
-cp /lib/cryptsetup/scripts/get_key_ssh $DESTDIR/lib/cryptsetup/scripts/get_key_ssh
+mkdir -p ${DESTDIR}/lib/cryptsetup/scripts/
+mkdir -p ${DESTDIR}/${ROOTDIR}/.ssh/
+cp /lib/cryptsetup/scripts/get_key_ssh ${DESTDIR}/lib/cryptsetup/scripts/get_key_ssh
