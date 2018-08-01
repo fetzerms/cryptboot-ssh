@@ -201,6 +201,17 @@ root@cryptvm:~$ reboot
 
 Your cryptvm now should boot automatically into your fully encrypted system.
 
+### Troubleshooting
+
+If the keyserver should be unreachable for whatever reason, you will be dropped into the `(initramfs)`-shell after a few minutes. From here you will be able to unlock your encrypted partition manually using a password.
+
+```bash
+(initramfs) cryptsetup open /dev/sda1 encrypted-rootfs
+(initramfs) exit
+```
+
+You will need to modify `sda0` and `encrypted-rootfs` accordingly.
+
 ## Contributing
 Contributions and feature requests are always welcome!
 
