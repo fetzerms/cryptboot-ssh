@@ -109,7 +109,7 @@ Variables:
 root@cryptvm:~$ keyHost="privat@192.168.1.245"
 
 # Set own mac address.
-root@cryptvm:~$ mac=$(ifconfig | grep HWaddr | awk '{ print $NF }')
+root@cryptvm:~$ mac=$(cat /sys/class/net/eth0/address)
 ```
 
 The following step is Debian specific and may need to be adjusted in other distributions
