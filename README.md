@@ -129,6 +129,11 @@ DEVICE=eth0
 IP=192.168.1.201::192.168.1.1:255.255.255.0::eth0
 ```
 
+Edit /etc/cryptsetup-initramfs/conf-hook to enable cryptsetup in initramfs emergency shell. This is very important, if you need to unlock the device manually. (This is for Stretch)
+```bash
+CRYPTSETUP=y
+```
+
 ```bash
 # Generate ssh key to retrieve keyfile with
 root@cryptvm:~$ mkdir -p /etc/initramfs-tools/root/.ssh/

@@ -33,6 +33,9 @@ DROPBEAR=y
 DEVICE=$IF
 IP=$IPCONFIG" >> /etc/initramfs-tools/initramfs.conf
 
+echo "
+CRYPTSETUP=y" >> /etc/cryptsetup-initramfs/conf-hook
+
 # Generate ssh key to retrieve keyfile with
 mkdir -p /etc/initramfs-tools/root/.ssh
 ssh-keygen -t rsa -f /etc/initramfs-tools/root/.ssh/unlock_rsa -N ''
