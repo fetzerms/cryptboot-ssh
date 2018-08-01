@@ -207,6 +207,7 @@ If the keyserver should be unreachable for whatever reason, you will be dropped 
 
 ```bash
 (initramfs) cryptsetup open /dev/sda1 encrypted-rootfs
+Enter passphrase for /dev/sda1:
 (initramfs) exit
 ```
 
