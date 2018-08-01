@@ -31,7 +31,8 @@ echo "
 BUSYBOX=y
 DROPBEAR=y
 DEVICE=$IF
-IP=$IPCONFIG" >> /etc/initramfs-tools/initramfs.conf
+IP=$IPCONFIG
+CRYPTSETUP=y" >> /etc/initramfs-tools/initramfs.conf
 
 # Generate ssh key to retrieve keyfile with
 mkdir -p /etc/initramfs-tools/root/.ssh
