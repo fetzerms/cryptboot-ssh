@@ -204,9 +204,9 @@ Your cryptvm now should boot automatically into your fully encrypted system.
 
 ### Troubleshooting
 
-If something went wrong on the initial setup and you're locked out, you can use the backed up initrd.img.cryptbootbackup. In order to do that, you would hit the *e*-key on the entry in GRUB. In this editor you'd edit the last line `initrd /initrd.img-4.9.0-7-amd64` line to say `initrd initrd.img.cryptbootbackup` and press F10. Since the backup will only be created by the script, this will probably not work if the setup should break later on, after new kernel versions have been installed.
+* If the keyserver should be unreachable for whatever reason, you will be dropped into the `(initramfs)`-shell after a few minutes. From here you will be able to unlock your encrypted partition manually using a password.
 
-If the keyserver should be unreachable for whatever reason, you will be dropped into the `(initramfs)`-shell after a few minutes. From here you will be able to unlock your encrypted partition manually using a password.
+* If something went wrong on the initial setup and you're locked out, you can use the backed up initrd.img.cryptbootbackup. In order to do that, you would hit the *e*-key on the entry in GRUB. In this editor you'd edit the last line `initrd /initrd.img-4.9.0-7-amd64` line to say `initrd initrd.img.cryptbootbackup` and press F10. Since the backup will only be created by the script, this will probably not work if the setup should break later on, after new kernel versions have been installed.
 
 ```bash
 (initramfs) cryptsetup open /dev/sda5 sda5_crypt
