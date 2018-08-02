@@ -52,7 +52,7 @@ mkdir tmp-mount && mount -t tmpfs none ./tmp-mount
 # Waiting for user to authorize the new RSA key
 echo "Please add this key to authorized_keys on $keyHost"
 echo "Press enter when finished"
-echo "command=\"./crypt-scripts/retrieve_"$HOSTNAME"_key\" `cat /etc/initramfs-tools/root/.ssh/unlock_rsa.pub`"
+echo "command=\"sh ./crypt-scripts/retrieve_"$HOSTNAME"_key\" `cat /etc/initramfs-tools/root/.ssh/unlock_rsa.pub`"
 read
 # Retrieve proper MAC address
 mac=$(cat /sys/class/net/$IF/address)
