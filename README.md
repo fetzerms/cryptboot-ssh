@@ -206,7 +206,7 @@ Your cryptvm now should boot automatically into your fully encrypted system.
 
 #### Manual unlocking
 
-If the keyserver should be unreachable for whatever reason, you will be dropped into the `(initramfs)`-shell after a few minutes. From here you will be able to unlock your encrypted partition manually using a password.
+If the keyserver should be unreachable for whatever reason, you will be dropped into the `(initramfs)`-shell after a few minutes. From here you will be able to unlock your encrypted partition manually using a password. For this to work it is critical, that *CRYPTSETUP=y* has been set, before creating the initramfs image or else the cryptsetup won't be available in initramfs emergency shell.
 
 ```bash
 (initramfs) cryptsetup open /dev/sda5 sda5_crypt
