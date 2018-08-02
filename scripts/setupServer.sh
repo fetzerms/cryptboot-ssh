@@ -1,5 +1,5 @@
 #!/bin/bash
-cd $(dirname "$0")
+cd $(dirname "$0")/..
 if [ "$#" -ne 2 ] ; then
         echo "Usage: $0 <clientName> <clientMac>"
         exit 0
