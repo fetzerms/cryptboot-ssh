@@ -17,6 +17,8 @@ if [ ! -f ~/crypt-keys/"$clientName".keyfile ] ; then
 	dd bs=512 count=4 if=/dev/urandom of=~/crypt-keys/"$clientName".keyfile iflag=fullblock 
 fi
 
+echo "Note this keyfile's hash for later verification: $(sha1sum ~/crypt-keys/"$clientName".keyfile | cut -c -40 )"
+
 # Download the server-keyscript and make it executable
 cp server/retrieve_crypto_key ~/crypt-scripts/retrieve_"$clientName"_key
 chmod +x ~/crypt-scripts/retrieve_"$clientName"_key
