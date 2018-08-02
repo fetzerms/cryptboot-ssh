@@ -1,12 +1,29 @@
 #!/bin/bash
 macAddr="${SSH_ORIGINAL_COMMAND^^}"
+
+keyfileName="PLACEHOLDER_FOR_KEYFILE"
+
 if [ ! -z "$macAddr" ]; then
 	hMacAddr=$( echo $macAddr | sha1sum | awk '{ print $1 }' )
 	checkHash="PLACEHOLDER_FOR_MAC_ADDRESS"
 
 	if [ "$hMacAddr" == "$checkHash" ]; then
-	        cat ~/crypt-keys/PLACEHOLDER_FOR_KEYFILE.keyfile
+	    cat ~/crypt-keys/PLACEHOLDER_FOR_KEYFILE.keyfile
+        success=1
 	else
 		echo "nope!"
+        success=0
 	fi
+
+    # If hooks exist (and are executable), execute them.
+    if [ -d "./hooks/" ]; then
+        for hook in "./hooks/*" ; do
+            if [ -x "$hook" ]; then
+                # execute hook, pass keyfile name, success status and ssh client.
+                # surpress all output, as we expect either "nope!" or the keyfile
+                # as the only output.
+                $hook "$keyfileName" "$success" "$SSH_CLIENT" > /dev/null 2>&1
+            fi
+        done
+    fi
 fi
