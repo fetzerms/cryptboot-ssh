@@ -50,6 +50,8 @@ chmod +x /etc/initramfs-tools/hooks/unlock-keys
 chmod a+x /lib/cryptsetup/scripts/get_key_ssh 
 # Adjust ip address.
 sed -i "s/KEYHOST_ADDRESS/$keyHost/g" /lib/cryptsetup/scripts/get_key_ssh
+# Adjust if.
+sed -i "s/PLACEHOLDER_FOR_IF/$IF/g" /lib/cryptsetup/scripts/get_key_ssh
 # Create and mount tmpfs (to not leave traces on any filesystem).
 mkdir tmp-mount && mount -t tmpfs none ./tmp-mount
 # Waiting for user to authorize the new RSA key
