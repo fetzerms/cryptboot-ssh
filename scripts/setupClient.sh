@@ -56,6 +56,9 @@ echo "command=\"./crypt-scripts/retrieve_"$HOSTNAME"_key\" `cat /etc/initramfs-t
 read
 # Retrieve keyfile
 ssh $keyHost -i /etc/initramfs-tools/root/.ssh/unlock_rsa -o UserKnownHostsFile=/etc/initramfs-tools/root/.ssh/known_hosts "cat .keyfiles/$HOSTNAME" > ./tmp-mount/keyfile
+# Verify keyfile
+echo "Please verify this hash for the keyfile to be correct. Abort, if they differ!"
+sha1sum ./tmp-mount/keyfile | cut -c -40
 echo "What is the path of the physical encrypted root partition? (e.g. /dev/sda1)"
 read PART
 # Add key to crypto device.
