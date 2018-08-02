@@ -112,6 +112,11 @@ root@cryptvm:~$ keyHost="privat@192.168.1.245"
 root@cryptvm:~$ mac=$(ifconfig | grep HWaddr | awk '{ print $NF }')
 ```
 
+Backup the current initrd, to be able to revert at any time.
+```bash
+cp /initrd.img /boot/initrd.img.cryptbootbackup
+```
+
 The following step is Debian specific and may need to be adjusted in other distributions
 
 ```bash
