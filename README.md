@@ -7,17 +7,10 @@ These scripts have been tested under the following distributions:
 | ------- | ----- | -------- | ------- |
 | Ubuntu Server | 16.04.2 | [fetzerms](https://github.com/fetzerms/) | 2017-04-30 |
 | Ubuntu Server | 14.04.3 | [fetzerms](https://github.com/fetzerms/) | 2015-11-13 |
+| Debian | 9.5 | [459below](https://github.com/459below/) | 2018-08-02 |
 | Debian | 8.2 | [fetzerms](https://github.com/fetzerms/) | 2015-11-10 |
 | Debian | 7.9 | [fetzerms](https://github.com/fetzerms/) | unknown |
 | Raspbian | 7.11 | [459below](https://github.com/459below/) | 2016-08-17 |
-
-
-These scripts are currently **not** working with the following distributions:
-
-| Distribution | Version | Who? | When?
-| ------- | ----- | -------- | ------- |
-| Debian | 9.4 | [sscheib](https://github.com/sscheib/) | 2018-03-18 |
-
 
 Feel free to add yourself (and your distribution) to this list!
 
