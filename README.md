@@ -112,6 +112,11 @@ root@cryptvm:~$ keyHost="privat@192.168.1.245"
 root@cryptvm:~$ mac=$(ifconfig | grep HWaddr | awk '{ print $NF }')
 ```
 
+Backup the current initrd, to be able to revert at any time.
+```bash
+cp /initrd.img /boot/initrd.img.cryptbootbackup
+```
+
 The following step is Debian specific and may need to be adjusted in other distributions
 
 ```bash
@@ -203,15 +208,25 @@ Your cryptvm now should boot automatically into your fully encrypted system.
 
 ### Troubleshooting
 
-If the keyserver should be unreachable for whatever reason, you will be dropped into the `(initramfs)`-shell after a few minutes. From here you will be able to unlock your encrypted partition manually using a password.
+This section deals with possible pitfalls and solutions, regarding the cryptboot environment.
+
+#### Manual unlocking
+
+If the keyserver should be unreachable for whatever reason, you will be dropped into the `(initramfs)`-shell after a few minutes. From here you will be able to unlock your encrypted partition manually using a password. For this to work it is critical, that *CRYPTSETUP=y* has been set, before creating the initramfs image or else the cryptsetup won't be available in initramfs emergency shell.
 
 ```bash
-(initramfs) cryptsetup open /dev/sda1 encrypted-rootfs
-Enter passphrase for /dev/sda1:
+(initramfs) cryptsetup open /dev/sda5 sda5_crypt
+Enter passphrase for /dev/sda5:
 (initramfs) exit
 ```
 
-You will need to modify `sda0` and `encrypted-rootfs` accordingly.
+Maybe you will need to modify `sda5` and `sda5_crypt` accordingly.
+
+#### Issues on initial setup
+
+If something went wrong on the initial setup and you're locked out, you can use the backed up initrd.img.cryptbootbackup. In order to do that, you would hit the *e*-key on the entry in GRUB. In this editor you'd edit the last line `initrd /initrd.img-4.9.0-7-amd64` line to say `initrd initrd.img.cryptbootbackup` and press F10. Since the backup will only be created by the script, this will probably not work if the setup should break later on, after new kernel versions have been installed.
+
+If previous kernel upgrades haven been carried out, there is also a way to boot into some older initrd using grub.
 
 ## Contributing
 Contributions and feature requests are always welcome!
