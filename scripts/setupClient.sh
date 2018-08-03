@@ -58,6 +58,11 @@ read
 mac=$(cat /sys/class/net/$IF/address)
 # Retrieve keyfile
 ssh $keyHost -i /etc/initramfs-tools/root/.ssh/unlock_rsa -o UserKnownHostsFile=/etc/initramfs-tools/root/.ssh/known_hosts "$mac" > ./tmp-mount/keyfile
+# Verify keyfile
+echo "Please verify this hash for the keyfile to be correct. Abort, if they differ! (ecf255377f0f44003b40897ca41696c82fbe25dd would mean that MAC-Address verification has failed.)"
+sha1sum ./tmp-mount/keyfile | cut -d' ' -f1
+read
+
 echo "What is the path of the physical encrypted root partition? (e.g. /dev/sda1)"
 read PART
 # Add key to crypto device.
