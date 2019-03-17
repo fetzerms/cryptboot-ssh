@@ -33,6 +33,9 @@ DROPBEAR=y
 DEVICE=$IF
 IP=$IPCONFIG" >> /etc/initramfs-tools/initramfs.conf
 
+echo "
+CRYPTSETUP=y" >> /etc/cryptsetup-initramfs/conf-hook
+
 # Generate ssh key to retrieve keyfile with
 mkdir -p /etc/initramfs-tools/root/.ssh
 ssh-keygen -t rsa -f /etc/initramfs-tools/root/.ssh/unlock_rsa -N ''
@@ -47,6 +50,8 @@ chmod +x /etc/initramfs-tools/hooks/unlock-keys
 chmod a+x /lib/cryptsetup/scripts/get_key_ssh 
 # Adjust ip address.
 sed -i "s/KEYHOST_ADDRESS/$keyHost/g" /lib/cryptsetup/scripts/get_key_ssh
+# Adjust interface.
+sed -i "s/PLACEHOLDER_FOR_IF/$IF/g" /lib/cryptsetup/scripts/get_key_ssh
 # Create and mount tmpfs (to not leave traces on any filesystem).
 mkdir tmp-mount && mount -t tmpfs none ./tmp-mount
 # Waiting for user to authorize the new RSA key
