@@ -1,4 +1,4 @@
 #!/bin/sh
 sleep 5
 mac="$(cat /sys/class/net/PLACEHOLDER_FOR_IF/address)"
-ssh -i /root/.ssh/unlock_rsa -o "UserKnownHostsFile=/root/.ssh/known_hosts ConnectTimeout=100" KEYHOST_ADDRESS "$mac"
+ssh -i /root/.ssh/unlock_rsa -o "UserKnownHostsFile=/root/.ssh/known_hosts" -o "ConnectTimeout=100" KEYHOST_ADDRESS "$mac"
