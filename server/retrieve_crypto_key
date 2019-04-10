@@ -4,7 +4,7 @@ if [ ! -z "$macAddr" ]; then
 	hMacAddr=$( echo $macAddr | sha1sum | cut -d' ' -f1 )
 	checkHash="PLACEHOLDER_FOR_MAC_ADDRESS"
 
-	if [ "$hMacAddr" == "$checkHash" ]; then
+	if [ "$hMacAddr" = "$checkHash" ]; then
 	        cat ~/crypt-keys/PLACEHOLDER_FOR_KEYFILE.keyfile
 	else
 		echo "nope!"
