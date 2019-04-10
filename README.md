@@ -5,6 +5,7 @@ These scripts have been tested under the following distributions:
 
 | Distribution | Version | Who? | When?
 | ------- | ----- | -------- | ------- |
+| Ubuntu Server | 18.04.2 | [fetzerms](https://github.com/fetzerms/) | 2019-04-10 |
 | Ubuntu Server | 16.04.2 | [fetzerms](https://github.com/fetzerms/) | 2017-04-30 |
 | Ubuntu Server | 14.04.3 | [fetzerms](https://github.com/fetzerms/) | 2015-11-13 |
 | Debian | 9.5 | [459below](https://github.com/459below/) | 2018-08-02 |
