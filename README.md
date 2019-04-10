@@ -101,8 +101,9 @@ Variables:
 # Set username and ip of the keyvm.
 root@cryptvm:~$ keyHost="privat@192.168.1.245"
 
-# Set own mac address.
-root@cryptvm:~$ mac=$(cat /sys/class/net/eth0/address)
+# Set own interface and mac address.
+root@cryptvm:~$ interface="eth0"
+root@cryptvm:~$ mac=$(cat /sys/class/net/"$interface"/address)
 ```
 
 Backup the current initrd, to be able to revert at any time.
@@ -151,6 +152,9 @@ root@cryptvm:~$ chmod a+x /lib/cryptsetup/scripts/get_key_ssh
 
 # Adjust ip address.
 root@cryptvm:~$ sed -i "s/KEYHOST_ADDRESS/$keyHost/g" /lib/cryptsetup/scripts/get_key_ssh
+
+# Adjust interface.
+root@cryptvm:~$ sed -i "s/PLACEHOLDER_FOR_IF/"$interface"/g" /lib/cryptsetup/scripts/get_key_ssh
 ```
 
 After these steps, make sure to copy the contents of unlock_rsa.pub to your clipboard.
