@@ -101,6 +101,7 @@ Variables:
 ```bash
 # Set username and ip of the keyvm.
 root@cryptvm:~$ keyHost="privat@192.168.1.245"
+root@cryptvm:~$ keyHostPort="22"
 
 # Set own interface and mac address.
 root@cryptvm:~$ interface="eth0"
@@ -153,6 +154,7 @@ root@cryptvm:~$ chmod a+x /lib/cryptsetup/scripts/get_key_ssh
 
 # Adjust ip address.
 root@cryptvm:~$ sed -i "s/KEYHOST_ADDRESS/$keyHost/g" /lib/cryptsetup/scripts/get_key_ssh
+root@cryptvm:~$ sed -i "s/KEYHOST_PORT/$keyHostPort/g" /lib/cryptsetup/scripts/get_key_ssh
 
 # Adjust interface.
 root@cryptvm:~$ sed -i "s/PLACEHOLDER_FOR_IF/"$interface"/g" /lib/cryptsetup/scripts/get_key_ssh
