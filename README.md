@@ -8,6 +8,7 @@ These scripts have been tested under the following distributions:
 | Ubuntu Server | 18.04.2 | [fetzerms](https://github.com/fetzerms/) | 2019-04-10 |
 | Ubuntu Server | 16.04.2 | [fetzerms](https://github.com/fetzerms/) | 2017-04-30 |
 | Ubuntu Server | 14.04.3 | [fetzerms](https://github.com/fetzerms/) | 2015-11-13 |
+| Debian | 10.7 | [fetzerms](https://github.com/fetzerms/) | 2020-12-16 |
 | Debian | 9.5 | [459below](https://github.com/459below/) | 2018-08-02 |
 | Debian | 8.2 | [fetzerms](https://github.com/fetzerms/) | 2015-11-10 |
 | Debian | 7.9 | [fetzerms](https://github.com/fetzerms/) | unknown |
