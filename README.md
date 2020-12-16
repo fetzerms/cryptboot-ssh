@@ -184,7 +184,7 @@ These steps are executed on the **cryptvm**. Variables are used.
 root@cryptvm:~$ mkdir tmp-mount && mount -t tmpfs none ./tmp-mount
 
 # Retrieve keyfile
-root@cryptvm:~$ ssh $keyHost -i /etc/initramfs-tools/root/.ssh/unlock_rsa -o UserKnownHostsFile=/etc/initramfs-tools/root/.ssh/known_hosts "$mac" > ./tmp-mount/keyfile
+root@cryptvm:~$ ssh $keyHost -p $keyHostPort -i /etc/initramfs-tools/root/.ssh/unlock_rsa -o UserKnownHostsFile=/etc/initramfs-tools/root/.ssh/known_hosts "$mac" > ./tmp-mount/keyfile
 ```
 If the command above executed successfully, you can check the keyfile contents to make sure that the keyfile was transfered successfully. 
 
